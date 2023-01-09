@@ -37,6 +37,8 @@ Default: `null`, do not link `Change-Id`.
 
 ### Repositories export
 
+Set `basePath` to identify which directory's repos to export.
+
 Set `exportAll` to instruct jGit to export all repositories, ignoring the check
 for existence of `git-daemon-export-ok` file at the root of the repository.
 
@@ -44,6 +46,7 @@ Default: `false`, repositories need to be explicitly marked for export.
 
 ```
 [gitiles]
+basePath = /var/repos
 exportAll = true
 ```
 

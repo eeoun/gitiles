@@ -36,6 +36,7 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.Objects;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 import javax.servlet.Filter;
@@ -211,6 +212,11 @@ class GitilesFilter extends MetaFilter {
   @Override
   public synchronized void init(FilterConfig config) throws ServletException {
     super.init(config);
+
+    if (Objects.isNull(this.branchRedirect)){
+      this.branchRedirect = new BranchRedirect();
+    }
+
     setDefaultFields(config);
 
     for (GitilesView.Type type : GitilesView.Type.values()) {

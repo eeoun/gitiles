@@ -8,6 +8,7 @@ DEPS = [
     "//lib:commons-text",
     "//lib:gson",
     "//lib:guava",
+    "//lib:guava-failureaccess",
     "//lib:html-types",
     "//lib:jsr305",
     "//lib:commonmark",
